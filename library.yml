@@ -1,0 +1,66 @@
+---
+:library:
+- 
+:books:
+- :title: Godfather
+  :author: !ruby/object:Author
+    name: Mario Puzo
+    biography: no biography
+- :title: The Wicher
+  :author: !ruby/object:Author
+    name: Anjey Sapkowski
+    biography: no biography
+:authors:
+- :name: Mario Puzo
+  :biography: no biography
+- :name: Anjey Sapkowski
+  :biography: no biography
+:readers:
+- :name: Bogdan
+  :email: test@gmail.com
+  :city: Dnipro
+  :street: Street
+  :house: 1
+:orders:
+- :book: !ruby/object:Book
+    title: The Wicher
+    author: !ruby/object:Author
+      name: Anjey Sapkowski
+      biography: no biography
+    count_of_taken_the_book: 23
+  :reader: !ruby/object:Reader
+    name: Bogdan
+    email: test@gmail.com
+    city: Dnipro
+    street: Street
+    house: 1
+    number_of_books_taken: 1
+  :date: 2019-05-28 23:09:16.912602371 +03:00
+- :book: !ruby/object:Book
+    title: The Wicher
+    author: !ruby/object:Author
+      name: Anjey Sapkowski
+      biography: no biography
+    count_of_taken_the_book: 24
+  :reader: !ruby/object:Reader
+    name: Bogdan
+    email: test@gmail.com
+    city: Dnipro
+    street: Street
+    house: 1
+    number_of_books_taken: 1
+  :date: 2019-05-28 23:09:16.915200138 +03:00
+- :book: !ruby/object:Book
+    title: Godfather
+    author: !ruby/object:Author
+      name: Mario Puzo
+      biography: no biography
+    count_of_taken_the_book: 0
+  :reader: !ruby/object:Reader
+    name: Bogdan
+    email: test@gmail.com
+    city: Dnipro
+    street: Street
+    house: 1
+    number_of_books_taken: 0
+  :date: 2019-05-29 16:52:43.129725369 +03:00
