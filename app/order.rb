@@ -13,13 +13,6 @@ class Order
     @date = date
   end
 
-  def insert_order
-    order = { book: @book, reader: @reader, date: @date }
-    data = Request.get('library.yml')
-    data[:orders].push(order)
-    Request.add('library.yml', data)
-  end
-
   def self.select_orders
     library = Request.get('library.yml')
     library[:orders]

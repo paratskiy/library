@@ -14,13 +14,6 @@ class Book
     @count_of_taken_the_book = 0
   end
 
-  def insert_book
-    book = { title: @title, author: @author }
-    data = Request.get('library.yml')
-    data[:books].push(book)
-    Request.add('library.yml', data)
-  end
-
   def ==(other)
     if other.is_a? Book
       @title == other.title

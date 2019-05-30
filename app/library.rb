@@ -7,35 +7,40 @@ require_relative 'author.rb'
 
 # #
 class Library
-  attr_accessor :book, :order, :reader, :author
+  attr_accessor :books, :orders, :readers, :authors, :library
 
-  def initialize(book, order, reader, author)
-    @book = book
-    @order = order
-    @reader = reader
-    @author = author
+  def initialize
+    @library = Request.get('library.yml')
+    @books = library[:books]
+    @orders = library[:orders]
+    @readers = library[:readers]
+    @authors = library[:authors]
   end
 
-  def add_book(title, author)
-    book = Book.new(title, author)
-    book.insert_book
+  def add_book(title)
+    book = Book.new(title, @authors.sample)
+    @books.push(book)
+    Request.add('library.yml', @library)
   end
 
   def add_reader(name, email, city, street, house)
     reader = Reader.new(name, email, city, street, house)
-    reader.insert_reader
+    @readers.push(reader)
+    Request.add('library.yml', library)
   end
 
   def add_author(name, biography = 'no biography')
     author = Author.new(name, biography)
-    author.insert_author
+    @authors.push(author);
+    Request.add('library.yml', library)
   end
-
-  def take_book(book, reader, date = Time.now)
-    order = Order.new(book, reader, date)
-    order.insert_order
-    book.take_the_book
-    reader.take_book
+  
+  def take_book
+    order = Order.new(@books.sample, @readers.sample, Time.now)
+    @orders.push(order)
+    Request.add('library.yml', library)
+    # book.take_the_book
+    # reader.take_book
   end
 
   def show_top_reader(count = 1)
@@ -53,3 +58,16 @@ class Library
     number_of_readers_of_the_most_popular_books.each { |reader| puts reader.name }
   end
 end
+
+library = Library.new
+
+# library.add_author('Vasa')
+# library.add_author('Petya')
+# library.add_author('Alyosha')
+# library.add_reader('Gena', 'test@gmail.com', 'Dnipro', 'Street', 1)
+# library.add_reader('Akakiy', 'test@gmail.com', 'Dnipro', 'Street', 1)
+# library.add_reader('Dazdraperma', 'test@gmail.com', 'Dnipro', 'Street', 1)
+# library.add_book('Dozor')
+# library.add_book('Potter')
+# library.add_book('Billy Milligan')
+library.take_book
