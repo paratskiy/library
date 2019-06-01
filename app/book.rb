@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'author.rb'
-require_relative 'modules/request.rb'
-require_relative 'modules/validate.rb'
+require_relative 'dependencies/dependencies.rb'
 
 # #
 class Book
@@ -12,13 +10,6 @@ class Book
     @title = title
     @author = author
     @count_of_taken_the_book = 0
-  end
-
-  def insert_book
-    book = { title: @title, author: @author }
-    data = Request.get('library.yml')
-    data[:books].push(book)
-    Request.add('library.yml', data)
   end
 
   def ==(other)

@@ -2,65 +2,188 @@
 :library:
 - 
 :books:
-- :title: Godfather
-  :author: !ruby/object:Author
-    name: Mario Puzo
+- &11 !ruby/object:Book
+  title: Godfather
+  author: &2 !ruby/object:Author
+    name: Alyosha
     biography: no biography
-- :title: The Wicher
-  :author: !ruby/object:Author
-    name: Anjey Sapkowski
+  count_of_taken_the_book: 0
+- &3 !ruby/object:Book
+  title: The Wicher
+  author: &1 !ruby/object:Author
+    name: Vasa
     biography: no biography
+  count_of_taken_the_book: 0
+- &8 !ruby/object:Book
+  title: Bukvar
+  author: *1
+  count_of_taken_the_book: 0
+- &9 !ruby/object:Book
+  title: Dozor
+  author: *1
+  count_of_taken_the_book: 0
+- &5 !ruby/object:Book
+  title: Potter
+  author: *2
+  count_of_taken_the_book: 0
+- &10 !ruby/object:Book
+  title: Billy Milligan
+  author: *1
+  count_of_taken_the_book: 0
 :authors:
-- :name: Mario Puzo
-  :biography: no biography
-- :name: Anjey Sapkowski
-  :biography: no biography
+- *1
+- !ruby/object:Author
+  name: Petya
+  biography: no biography
+- *2
 :readers:
-- :name: Bogdan
-  :email: test@gmail.com
-  :city: Dnipro
-  :street: Street
-  :house: 1
+- &6 !ruby/object:Reader
+  name: Gena
+  email: test@gmail.com
+  city: Dnipro
+  street: Street
+  house: 1
+  number_of_books_taken: 0
+- &7 !ruby/object:Reader
+  name: Akakiy
+  email: test@gmail.com
+  city: Dnipro
+  street: Street
+  house: 1
+  number_of_books_taken: 0
+- &4 !ruby/object:Reader
+  name: Dazdraperma
+  email: test@gmail.com
+  city: Dnipro
+  street: Street
+  house: 1
+  number_of_books_taken: 0
 :orders:
-- :book: !ruby/object:Book
-    title: The Wicher
-    author: !ruby/object:Author
-      name: Anjey Sapkowski
-      biography: no biography
-    count_of_taken_the_book: 23
-  :reader: !ruby/object:Reader
-    name: Bogdan
-    email: test@gmail.com
-    city: Dnipro
-    street: Street
-    house: 1
-    number_of_books_taken: 1
-  :date: 2019-05-28 23:09:16.912602371 +03:00
-- :book: !ruby/object:Book
-    title: The Wicher
-    author: !ruby/object:Author
-      name: Anjey Sapkowski
-      biography: no biography
-    count_of_taken_the_book: 24
-  :reader: !ruby/object:Reader
-    name: Bogdan
-    email: test@gmail.com
-    city: Dnipro
-    street: Street
-    house: 1
-    number_of_books_taken: 1
-  :date: 2019-05-28 23:09:16.915200138 +03:00
-- :book: !ruby/object:Book
-    title: Godfather
-    author: !ruby/object:Author
-      name: Mario Puzo
-      biography: no biography
-    count_of_taken_the_book: 0
-  :reader: !ruby/object:Reader
-    name: Bogdan
-    email: test@gmail.com
-    city: Dnipro
-    street: Street
-    house: 1
-    number_of_books_taken: 0
-  :date: 2019-05-29 16:52:43.129725369 +03:00
+- !ruby/object:Order
+  book: *3
+  reader: *4
+  date: 2019-05-30 21:17:18.644044831 +03:00
+- !ruby/object:Order
+  book: *5
+  reader: *6
+  date: 2019-05-30 21:17:47.741179063 +03:00
+- !ruby/object:Order
+  book: *3
+  reader: *7
+  date: 2019-05-30 21:17:48.493863059 +03:00
+- !ruby/object:Order
+  book: *8
+  reader: *7
+  date: 2019-05-30 21:17:49.418812506 +03:00
+- !ruby/object:Order
+  book: *9
+  reader: *7
+  date: 2019-05-30 21:20:14.420833416 +03:00
+- !ruby/object:Order
+  book: *3
+  reader: *7
+  date: 2019-05-30 21:20:25.918793260 +03:00
+- !ruby/object:Order
+  book: *10
+  reader: *6
+  date: 2019-05-30 21:44:00.758556125 +03:00
+- !ruby/object:Order
+  book: *10
+  reader: *7
+  date: 2019-05-30 21:54:43.082072184 +03:00
+- !ruby/object:Order
+  book: *8
+  reader: *7
+  date: 2019-05-30 21:55:54.062280743 +03:00
+- !ruby/object:Order
+  book: *8
+  reader: *6
+  date: 2019-05-30 21:56:16.751233603 +03:00
+- !ruby/object:Order
+  book: *5
+  reader: *6
+  date: 2019-05-30 21:56:48.246259261 +03:00
+- !ruby/object:Order
+  book: *3
+  reader: *4
+  date: 2019-05-30 21:57:34.482222583 +03:00
+- !ruby/object:Order
+  book: *10
+  reader: *6
+  date: 2019-05-30 21:57:47.814036537 +03:00
+- !ruby/object:Order
+  book: *8
+  reader: *7
+  date: 2019-05-30 21:58:02.534991834 +03:00
+- !ruby/object:Order
+  book: *3
+  reader: *7
+  date: 2019-05-30 21:58:07.710352239 +03:00
+- !ruby/object:Order
+  book: *10
+  reader: *6
+  date: 2019-05-30 21:58:18.225662779 +03:00
+- !ruby/object:Order
+  book: *3
+  reader: *4
+  date: 2019-05-30 21:58:29.095669617 +03:00
+- !ruby/object:Order
+  book: *3
+  reader: *6
+  date: 2019-05-30 21:58:56.411826957 +03:00
+- !ruby/object:Order
+  book: *10
+  reader: *7
+  date: 2019-05-30 21:59:50.530836200 +03:00
+- !ruby/object:Order
+  book: *9
+  reader: *4
+  date: 2019-05-30 22:02:29.175696438 +03:00
+- !ruby/object:Order
+  book: *10
+  reader: *7
+  date: 2019-05-30 22:03:56.834350773 +03:00
+- !ruby/object:Order
+  book: *11
+  reader: *7
+  date: 2019-05-30 22:04:05.007981653 +03:00
+- !ruby/object:Order
+  book: *3
+  reader: *7
+  date: 2019-05-30 22:04:14.531059623 +03:00
+- !ruby/object:Order
+  book: *10
+  reader: *4
+  date: 2019-05-30 22:04:47.726388336 +03:00
+- !ruby/object:Order
+  book: *11
+  reader: *7
+  date: 2019-05-30 22:23:31.726744452 +03:00
+- !ruby/object:Order
+  book: *10
+  reader: *7
+  date: 2019-05-30 22:24:15.504504720 +03:00
+- !ruby/object:Order
+  book: *5
+  reader: *7
+  date: 2019-05-30 22:24:31.370940281 +03:00
+- !ruby/object:Order
+  book: *5
+  reader: *6
+  date: 2019-05-30 22:24:58.540130743 +03:00
+- !ruby/object:Order
+  book: *3
+  reader: *4
+  date: 2019-05-30 22:25:08.834156635 +03:00
+- !ruby/object:Order
+  book: *10
+  reader: *6
+  date: 2019-05-30 22:25:15.243363482 +03:00
+- !ruby/object:Order
+  book: *9
+  reader: *7
+  date: 2019-05-30 22:25:26.102895838 +03:00
+- !ruby/object:Order
+  book: *10
+  reader: *6
+  date: 2019-05-30 22:25:34.736056566 +03:00
