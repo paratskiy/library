@@ -12,6 +12,5 @@ class Order
     @book = book
     @reader = reader
     @date = date
-    puts @date
   end
 end
