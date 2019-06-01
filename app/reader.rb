@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require_relative 'dependencies/dependencies.rb'
 
-# #
 class Reader
   attr_accessor :name, :email, :city, :street, :house, :number_of_books_taken
 

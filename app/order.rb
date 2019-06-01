@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require_relative 'dependencies/dependencies.rb'
 
-# #
 class Order
   attr_accessor :book, :reader, :date
 

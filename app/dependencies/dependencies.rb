@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+require_relative 'date'
 require_relative '../modules/request.rb'
 require_relative '../modules/validate.rb'
 
@@ -12,5 +11,3 @@ require_relative '../library.rb'
 require_relative '../statistic.rb'
 require_relative '../statistic.rb'
 require_relative '../output.rb'
-
-

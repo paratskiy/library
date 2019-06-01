@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require 'yaml'
 
-# #
 module Request
   def self.add(path, element)
     File.open(path, 'w') do |file|

@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require_relative 'dependencies/dependencies.rb'
 
-# #
 class Statistic < Library
   def select_top_readers(count = 1)
     readers = []
