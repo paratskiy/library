@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require_relative 'dependencies/dependencies.rb'
 
-# #
 class Library
   attr_accessor :books, :orders, :readers, :authors, :library
 
@@ -37,21 +34,8 @@ class Library
   end
 
   def take_book
-    order = Order.new(@books.sample, @readers.sample, Time.now)
+    order = Order.new(@books.sample, @readers.sample, Time.zone.now)
     @orders.push(order)
     Request.add('library.yml', library)
   end
 end
-
-library = Library.new
-
-# library.add_author('Vasa')
-# library.add_author('Petya')
-# library.add_author('Alyosha')
-# library.add_reader('Gena', 'test@gmail.com', 'Dnipro', 'Street', 1)
-# library.add_reader('Akakiy', 'test@gmail.com', 'Dnipro', 'Street', 1)
-# library.add_reader('Dazdraperma', 'test@gmail.com', 'Dnipro', 'Street', 1)
-# library.add_book('Dozor')
-# library.add_book('Potter')
-# library.add_book('Billy Milligan')
-# library.take_book

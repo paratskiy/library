@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 require_relative 'dependencies/dependencies.rb'
 
-# #
 class Output < Statistic
   def show_top_readers(count = 1)
     top_readers = Statistic.new.select_top_readers(count)

@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# #
 class Reader
   attr_accessor :name, :email, :city, :street, :house, :number_of_books_taken
 

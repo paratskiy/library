@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# #
 module Validate
   def self.empty?(argument, name)
     raise ArgumentError, "#{name} is empty" if argument.empty?
