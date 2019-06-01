@@ -195,3 +195,15 @@
   book: *3
   reader: *7
   date: 2019-06-01 11:58:39.231451011 +03:00
+- !ruby/object:Order
+  book: *5
+  reader: *4
+  date: 2019-06-01
+- !ruby/object:Order
+  book: *8
+  reader: *4
+  date: !ruby/object:DateTime 2019-06-01 19:17:55.406194186 +03:00
+- !ruby/object:Order
+  book: *8
+  reader: *7
+  date: !ruby/object:DateTime 2019-06-01 19:23:58.502052102 +03:00
