@@ -7,7 +7,7 @@ class Book
     Validate.empty?(title, 'Title')
     Validate.string?(title, 'Title')
     Validate.empty?(author, 'Author')
-    Validate.is_instanse_of?(author, 'Author', Author)
+    Validate.instanse_of?(author, 'Author', Author)
 
     @title = title
     @author = author

@@ -11,10 +11,10 @@ library = Library.new
 # library.add_book('Dozor')
 # library.add_book('Potter')
 # library.add_book('Billy Milligan')
-# library.take_book
+library.take_book
 
 output = Output.new
 
-# output.show_top_readers
+output.show_top_readers
 # output.show_top_books(2)
 # output.show_reader_of_top_books

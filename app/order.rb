@@ -5,9 +5,9 @@ class Order
 
   def initialize(book, reader, date = Time.now)
     Validate.empty?(book, 'Book')
-    Validate.is_instanse_of?(book, 'Book', Book)
+    Validate.instanse_of?(book, 'Book', Book)
     Validate.empty?(reader, 'Reader')
-    Validate.is_instanse_of?(reader, 'Reader', Reader)
+    Validate.instanse_of?(reader, 'Reader', Reader)
 
     @book = book
     @reader = reader

@@ -17,7 +17,7 @@ module Validate
     raise ArgumentError, "#{name} is negative" unless argument.positive?
   end
 
-  def self.is_instanse_of?(argument, name, instance_class)
+  def self.instanse_of?(argument, name, instance_class)
     raise TypeError, "#{name} is not instance of #{instance_class}" unless argument.is_a? instance_class
   end
 end
