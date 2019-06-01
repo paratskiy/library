@@ -21,11 +21,6 @@ class Reader
     @city = city
     @street = street
     @house = house
-    @number_of_books_taken = 0
-  end
-
-  def take_book
-    @number_of_books_taken += 1
   end
 end
 

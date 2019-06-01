@@ -11,7 +11,6 @@ class Book
 
     @title = title
     @author = author
-    @count_of_taken_the_book = 0
   end
 
   def ==(other)
@@ -20,9 +19,5 @@ class Book
     else
       false
     end
-  end
-
-  def take_the_book
-    @count_of_taken_the_book += 1
   end
 end

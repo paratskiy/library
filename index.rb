@@ -1,6 +1,6 @@
 require_relative 'app/dependencies/dependencies.rb'
 
-library = Library.new
+# library = Library.new
 
 # 30.times { library.add_author(Faker::Book.author) }
 # 30.times do
@@ -17,6 +17,6 @@ library = Library.new
 
 output = Output.new
 
-# output.show_top_readers
-# output.show_top_books(2)
-# output.show_reader_of_top_books
+output.show_top_readers
+output.show_top_books(2)
+output.show_reader_of_top_books

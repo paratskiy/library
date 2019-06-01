@@ -35,7 +35,7 @@ class Library
 
   def take_book
     order = Order.new(@books.sample, @readers.sample, date = DateTime.now)
-    @orders.push(order)
+    @orders.push(order, date)
     Request.add('library.yml', library)
   end
 end
