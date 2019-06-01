@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'book.rb'
-require_relative 'reader.rb'
-require_relative 'order.rb'
-require_relative 'author.rb'
+require_relative 'dependencies/dependencies.rb'
 
 # #
 class Library
@@ -20,42 +17,29 @@ class Library
   def add_book(title)
     book = Book.new(title, @authors.sample)
     @books.push(book)
-    Request.add('library.yml', @library)
+    update_library
   end
 
   def add_reader(name, email, city, street, house)
     reader = Reader.new(name, email, city, street, house)
     @readers.push(reader)
-    Request.add('library.yml', library)
+    update_library
   end
 
   def add_author(name, biography = 'no biography')
     author = Author.new(name, biography)
-    @authors.push(author);
-    Request.add('library.yml', library)
+    @authors.push(author)
+    update_library
   end
-  
+
+  def update_library
+    Request.add('library.yml', @library)
+  end
+
   def take_book
     order = Order.new(@books.sample, @readers.sample, Time.now)
     @orders.push(order)
     Request.add('library.yml', library)
-    # book.take_the_book
-    # reader.take_book
-  end
-
-  def show_top_reader(count = 1)
-    top_reader = Order.select_top_reader(count)
-    top_reader.each { |reader| puts reader.name }
-  end
-
-  def show_top_book(count = 1)
-    top_book = Order.select_top_book(count)
-    top_book.each { |book| puts book.title }
-  end
-
-  def show_number_of_readers_of_the_most_popular_books(some_quantity = 3)
-    number_of_readers_of_the_most_popular_books = Order.select_number_of_readers_of_the_most_popular_books(some_quantity)
-    number_of_readers_of_the_most_popular_books.each { |reader| puts reader.name }
   end
 end
 
@@ -70,4 +54,4 @@ library = Library.new
 # library.add_book('Dozor')
 # library.add_book('Potter')
 # library.add_book('Billy Milligan')
-library.take_book
+# library.take_book

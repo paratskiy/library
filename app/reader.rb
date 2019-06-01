@@ -17,3 +17,8 @@ class Reader
     @number_of_books_taken += 1
   end
 end
+
+reader = Reader.new('Gena', 'test@gmail.com', 'Dnipro', 'Street', 1)
+reader2 = reader
+
+puts reader == reader2

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative 'app/library.rb'
+require_relative 'app/dependencies/dependencies.rb'
 
-library = Library.new
+output = Output.new
 
-library.show_top_reader
-library.show_top_book(3)
-library.show_number_of_readers_of_the_most_popular_books
+output.show_top_readers
+output.show_top_books
+output.show_reader_of_top_books

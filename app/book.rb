@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'author.rb'
-require_relative 'modules/request.rb'
-require_relative 'modules/validate.rb'
+require_relative 'dependencies/dependencies.rb'
 
 # #
 class Book
