@@ -4,9 +4,13 @@ class Book
   attr_accessor :title, :author, :count_of_taken_the_book
 
   def initialize(title, author)
+    Validate.empty?(title, 'Title')
+    Validate.string?(title, 'Title')
+    Validate.empty?(author, 'Author')
+    Validate.instanse_of?(author, 'Author', Author)
+
     @title = title
     @author = author
-    @count_of_taken_the_book = 0
   end
 
   def ==(other)
@@ -15,9 +19,5 @@ class Book
     else
       false
     end
-  end
-
-  def take_the_book
-    @count_of_taken_the_book += 1
   end
 end
