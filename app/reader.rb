@@ -1,5 +1,3 @@
-require_relative 'dependencies/dependencies.rb'
-
 class Reader
   attr_accessor :name, :email, :city, :street, :house, :number_of_books_taken
 
@@ -23,8 +21,3 @@ class Reader
     @house = house
   end
 end
-
-reader = Reader.new('Gena', 'test@gmail.com', 'Dnipro', 'Street', 1)
-reader2 = reader
-
-puts reader == reader2

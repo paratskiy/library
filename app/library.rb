@@ -1,10 +1,10 @@
-require_relative 'dependencies/dependencies.rb'
-
 class Library
   attr_accessor :books, :orders, :readers, :authors, :library
 
+  LIBRARY = 'library.yml'.freeze
+
   def initialize
-    @library = Request.get('library.yml')
+    @library = Request.get(LIBRARY)
     @books = library[:books]
     @orders = library[:orders]
     @readers = library[:readers]
@@ -30,12 +30,12 @@ class Library
   end
 
   def update_library
-    Request.add('library.yml', @library)
+    Request.add(LIBRARY, @library)
   end
 
   def take_book
-    order = Order.new(@books.sample, @readers.sample, date = DateTime.now)
-    @orders.push(order, date)
-    Request.add('library.yml', library)
+    order = Order.new(@books.sample, @readers.sample)
+    @orders.push(order)
+    update_library
   end
 end

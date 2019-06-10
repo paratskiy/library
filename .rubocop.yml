@@ -1,7 +1,3 @@
-AllCops:
-  Exclude:
-    - config/initializers/secret_token.rb
-
 Style/FrozenStringLiteralComment:
   Enabled: false
 
@@ -12,4 +8,4 @@ Style/Documentation:
   Enabled: false
 
 Metrics/MethodLength:
-  Max: 30
+  Max: 15

@@ -382,7 +382,7 @@
   street: Andreas Ferry
   house: 94408
   number_of_books_taken: 0
-- !ruby/object:Reader
+- &56 !ruby/object:Reader
   name: Darrell Jakubowski DDS
   email: rolland@mayernienow.name
   city: West Hiramstad
@@ -545,3 +545,15 @@
   book: *51
   reader: *53
   date: !ruby/object:DateTime 2019-06-01 19:47:51.967798161 +03:00
+- !ruby/object:Order
+  book: *32
+  reader: *25
+  date: !ruby/object:DateTime 2019-06-10 17:05:56.051195264 +03:00
+- !ruby/object:Order
+  book: *38
+  reader: *56
+  date: !ruby/object:DateTime 2019-06-10 17:06:32.923832371 +03:00
+- !ruby/object:Order
+  book: *38
+  reader: *43
+  date: !ruby/object:DateTime 2019-06-10 17:10:45.474977197 +03:00

@@ -1,5 +1,3 @@
-require_relative '../dependencies/dependencies.rb'
-
 module Validate
   def self.empty?(argument, name)
     raise ArgumentError, "#{name} is empty" if argument.to_s.empty?
