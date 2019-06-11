@@ -1,7 +1,7 @@
 class Reader
-  attr_accessor :name, :email, :city, :street, :house, :number_of_books_taken
+  attr_accessor :name, :email, :city, :street
 
-  def initialize(name, email, city, street, house)
+  def initialize(name:, email:, city:, street:, house:)
     Validate.empty?(name, 'Name')
     Validate.string?(name, 'Name')
     Validate.empty?(email, 'Email')

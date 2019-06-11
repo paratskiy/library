@@ -11,21 +11,18 @@ class Library
     @authors = library[:authors]
   end
 
-  def add_book(title)
-    book = Book.new(title, @authors.sample)
-    @books.push(book)
-    update_library
-  end
-
-  def add_reader(name, email, city, street, house)
-    reader = Reader.new(name, email, city, street, house)
-    @readers.push(reader)
-    update_library
-  end
-
-  def add_author(name, biography = 'no biography')
-    author = Author.new(name, biography)
-    @authors.push(author)
+  def add(subject, **arguments)
+    case subject
+    when 'book'
+      book = Book.new(arguments)
+      @books.push(book)
+    when 'reader'
+      reader = Reader.new(arguments)
+      @readers.push(reader)
+    when 'author'
+      author = Author.new(arguments)
+      @authors.push(author)
+    end
     update_library
   end
 
