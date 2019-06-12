@@ -4,8 +4,8 @@ class Author
   include Validate
 
   def initialize(name:, biography: 'no biography')
-    Validate.empty?(name, 'Name')
-    Validate.string?(name, 'Name')
+    empty?(name, 'Name')
+    string?(name, 'Name')
     @name = name
     @biography = biography
   end

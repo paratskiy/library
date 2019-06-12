@@ -4,7 +4,7 @@ class Library
   LIBRARY = 'library.yml'.freeze
 
   def initialize
-    @library = Request.get(LIBRARY)
+    @library = DbUtils.get(LIBRARY)
     @books = library[:books]
     @orders = library[:orders]
     @readers = library[:readers]
@@ -27,11 +27,11 @@ class Library
   end
 
   def update_library
-    Request.add(LIBRARY, @library)
+    DbUtils.add(LIBRARY, @library)
   end
 
   def take_book
-    order = Order.new(@books.sample, @readers.sample)
+    order = Order.new(book: @books.sample, reader: @readers.sample)
     @orders.push(order)
     update_library
   end

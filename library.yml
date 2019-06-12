@@ -146,7 +146,7 @@
 - &93 !ruby/object:Book
   title: Invasion of the Nuclear Jungle
   author: *7
-- !ruby/object:Book
+- &95 !ruby/object:Book
   title: Electric Rain
   author: *8
 - &38 !ruby/object:Book
@@ -320,7 +320,7 @@
   city: North Shakira
   street: Berna Crossing
   house: 8233
-- !ruby/object:Reader
+- &96 !ruby/object:Reader
   name: Audry Runolfsson
   email: melinda_jenkins@shanahan.ca
   city: Autumnbury
