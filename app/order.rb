@@ -1,13 +1,11 @@
 class Order
   attr_accessor :book, :reader, :date
 
-  include Validate
+  include Validating
 
-  def initialize(book:, reader:, date: DateTime.now)
-    empty?(book, 'Book')
-    instance_of?(book, 'Book', Book)
-    empty?(reader, 'Reader')
-    instance_of?(reader, 'Reader', Reader)
+  def initialize(book: '', reader: '', date: DateTime.now)
+    valid_book?(book)
+    valid_reader?(reader)
 
     @book = book
     @reader = reader

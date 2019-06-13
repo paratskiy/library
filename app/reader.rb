@@ -1,20 +1,14 @@
 class Reader
   attr_accessor :name, :email, :city, :street
 
-  include Validate
+  include Validating
 
-  def initialize(name:, email:, city:, street:, house:)
-    empty?(name, 'Name')
-    string?(name, 'Name')
-    empty?(email, 'Email')
-    string?(email, 'Email')
-    empty?(city, 'City')
-    string?(city, 'City')
-    empty?(street, 'Street')
-    string?(street, 'Street')
-    empty?(house, 'House')
-    number?(house, 'House')
-    positive?(house, 'House')
+  def initialize(name: '', email: '', city: '', street: '', house: '')
+    valid_string?(name)
+    valid_string?(email)
+    valid_string?(city)
+    valid_string?(street)
+    valid_number?(house)
 
     @name = name
     @email = email

@@ -1,7 +1,6 @@
 class Statistic
-
   @orders = Library.new.orders
-  # names.inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}
+
   def self.select_top_readers(count = 1)
     readers = @orders.map(&:reader)
     sorted_readers = readers.group_by(&:itself).transform_values(&:count).sort_by { |_reader, quantity| -quantity }

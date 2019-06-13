@@ -1,8 +1,9 @@
 require 'yaml'
 require 'date'
 require 'ffaker'
-require_relative '../../Storage/Database/DB/DbUtils.rb'
-require_relative '../modules/validate.rb'
+require_relative '../../Storage/Database/DB/db_utils.rb'
+require_relative '../exceptions/exceptions.rb'
+require_relative '../modules/validating.rb'
 
 require_relative '../author.rb'
 require_relative '../reader.rb'

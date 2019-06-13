@@ -1,13 +1,11 @@
 class Book
   attr_accessor :title, :author
 
-  include Validate
+  include Validating
 
-  def initialize(title, author)
-    empty?(title, 'Title')
-    string?(title, 'Title')
-    empty?(author, 'Author')
-    instanse_of?(author, 'Author', Author)
+  def initialize(title: '', author: '')
+    valid_string?(title)
+    valid_author?(author)
 
     @title = title
     @author = author
