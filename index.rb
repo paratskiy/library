@@ -2,16 +2,17 @@ require_relative 'app/dependencies/dependencies.rb'
 
 # library = Library.new
 
-# 30.times { library.add_author(Faker::Book.author) }
+# 30.times { library.add('author', name: FFaker::Book.author) }
+
 # 30.times do
-#   library.add_reader(Faker::Name.name,
-#                      Faker::Internet.email,
-#                      Faker::Address.city,
-#                      Faker::Address.street_name,
-#                      Faker::Address.building_number.to_i)
+#   library.add('reader', name: FFaker::Name.name,
+#                         email: FFaker::Internet.email,
+#                         city: FFaker::Address.city,
+#                         street: FFaker::Address.street_name,
+#                         house: FFaker::Address.building_number.to_i)
 # end
 
-# 30.times { library.add_book(Faker::Book.title) }
+# 30.times { library.add('book', title: FFaker::Book.title, author: library.authors.sample) }
 
 # 30.times { library.take_book }
 

@@ -1,23 +1,13 @@
-require_relative 'dependencies/dependencies.rb'
-
 class Book
-  attr_accessor :title, :author, :count_of_taken_the_book
+  attr_accessor :title, :author
 
-  def initialize(title, author)
-    Validate.empty?(title, 'Title')
-    Validate.string?(title, 'Title')
-    Validate.empty?(author, 'Author')
-    Validate.instanse_of?(author, 'Author', Author)
+  include Validating
+
+  def initialize(title: '', author: '')
+    valid_string?(title)
+    valid_author?(author)
 
     @title = title
     @author = author
-  end
-
-  def ==(other)
-    if other.is_a? Book
-      @title == other.title
-    else
-      false
-    end
   end
 end

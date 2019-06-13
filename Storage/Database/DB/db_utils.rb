@@ -1,6 +1,4 @@
-require 'yaml'
-
-module Request
+module DbUtils
   def self.add(path, element)
     File.open(path, 'w') do |file|
       file.write(element.to_yaml)
