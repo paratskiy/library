@@ -36,7 +36,7 @@
 - !ruby/object:Book
   title: I am Ultra Tears
   author: *2
-- &99 !ruby/object:Book
+- !ruby/object:Book
   title: Hungry Jungle
   author: &8 !ruby/object:Author
     name: Pilar Murazik
@@ -51,7 +51,7 @@
   author: &25 !ruby/object:Author
     name: Ruthanne Borer
     biography: no biography
-- &98 !ruby/object:Book
+- !ruby/object:Book
   title: Tokyo Jungle
   author: &9 !ruby/object:Author
     name: Pamila Marvin
@@ -110,7 +110,7 @@
 - &40 !ruby/object:Book
   title: Killer Rain
   author: *4
-- &96 !ruby/object:Book
+- !ruby/object:Book
   title: I Married a Nuclear Brains
   author: &22 !ruby/object:Author
     name: Lacy Marvin
@@ -118,7 +118,7 @@
 - !ruby/object:Book
   title: Planet of the Nuclear Mutant
   author: *1
-- &97 !ruby/object:Book
+- !ruby/object:Book
   title: Nuclear Gypsy
   author: &23 !ruby/object:Author
     name: Sheilah Lemke
@@ -137,7 +137,7 @@
   author: &14 !ruby/object:Author
     name: Vernell Wiza
     biography: no biography
-- &100 !ruby/object:Book
+- !ruby/object:Book
   title: Death Cousins
   author: *2
 - &43 !ruby/object:Book
@@ -146,7 +146,7 @@
 - &93 !ruby/object:Book
   title: Invasion of the Nuclear Jungle
   author: *7
-- &95 !ruby/object:Book
+- !ruby/object:Book
   title: Electric Rain
   author: *8
 - &38 !ruby/object:Book
@@ -163,7 +163,7 @@
 - &73 !ruby/object:Book
   title: I Married a Bloody Rain
   author: *9
-- &101 !ruby/object:Book
+- !ruby/object:Book
   title: Tokyo Hills
   author: *10
 - &57 !ruby/object:Book
@@ -239,9 +239,6 @@
 - !ruby/object:Book
   title: 'Codename: Tokyo Pickpocket'
   author: *20
-- !ruby/object:Book
-  title: Nuclear Woman
-  author: *15
 :authors:
 - *6
 - *2
@@ -279,24 +276,6 @@
 - *11
 - !ruby/object:Author
   name: Faith Blick
-  biography: no biography
-- !ruby/object:Author
-  name: Laurence Harvey
-  biography: no biography
-- !ruby/object:Author
-  name: Jody Grady
-  biography: no biography
-- !ruby/object:Author
-  name: Yuk Huel
-  biography: no biography
-- !ruby/object:Author
-  name: Asa Zboncak
-  biography: no biography
-- !ruby/object:Author
-  name: Racquel Hansen
-  biography: no biography
-- !ruby/object:Author
-  name: Dede Rau
   biography: no biography
 :readers:
 - &48 !ruby/object:Reader
@@ -479,12 +458,6 @@
   city: South Katharynfurt
   street: Gislason Flats
   house: 510
-- !ruby/object:Reader
-  name: Shara McGlynn
-  email: tamika@rolfson.info
-  city: East Ardathport
-  street: Schumm Place
-  house: 698
 :orders:
 - !ruby/object:Order
   book: *29
@@ -726,59 +699,3 @@
   book: *94
   reader: *75
   date: !ruby/object:DateTime 2019-06-11 21:07:23.061066934 +03:00
-- !ruby/object:Order
-  book: *95
-  reader: *85
-  date: !ruby/object:DateTime 2019-06-18 20:21:42.240938411 +03:00
-- !ruby/object:Order
-  book: *41
-  reader: *61
-  date: !ruby/object:DateTime 2019-06-18 20:22:56.980285369 +03:00
-- !ruby/object:Order
-  book: *49
-  reader: *37
-  date: !ruby/object:DateTime 2019-06-18 20:24:25.646845139 +03:00
-- !ruby/object:Order
-  book: *86
-  reader: *37
-  date: !ruby/object:DateTime 2019-06-18 20:25:20.640439526 +03:00
-- !ruby/object:Order
-  book: *96
-  reader: *90
-  date: !ruby/object:DateTime 2019-06-18 20:26:52.791526744 +03:00
-- !ruby/object:Order
-  book: *84
-  reader: *42
-  date: !ruby/object:DateTime 2019-06-19 17:27:25.529014428 +03:00
-- !ruby/object:Order
-  book: *97
-  reader: *92
-  date: !ruby/object:DateTime 2019-06-19 17:27:49.573873397 +03:00
-- !ruby/object:Order
-  book: *98
-  reader: *70
-  date: !ruby/object:DateTime 2019-06-19 17:30:29.241853526 +03:00
-- !ruby/object:Order
-  book: *99
-  reader: *66
-  date: !ruby/object:DateTime 2019-06-19 17:39:19.770972112 +03:00
-- !ruby/object:Order
-  book: *100
-  reader: *37
-  date: !ruby/object:DateTime 2019-06-19 17:39:41.892098003 +03:00
-- !ruby/object:Order
-  book: *101
-  reader: *92
-  date: !ruby/object:DateTime 2019-06-19 17:44:01.344545390 +03:00
-- !ruby/object:Order
-  book: *89
-  reader: *75
-  date: !ruby/object:DateTime 2019-06-19 17:52:56.476721286 +03:00
-- !ruby/object:Order
-  book: *86
-  reader: *32
-  date: !ruby/object:DateTime 2019-06-19 17:53:14.307967240 +03:00
-- !ruby/object:Order
-  book: *98
-  reader: *87
-  date: !ruby/object:DateTime 2019-06-19 17:53:23.688095703 +03:00
