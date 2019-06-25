@@ -17,13 +17,13 @@ class Library
     update_library
   end
 
-  def update_library
-    DbUtils.add(LIBRARY, library)
+  def take_book
+    order = Order.new(book: library[:books].sample, reader: library[:readers].sample)
+    library[:orders].push(order)
+    update_library
   end
 
-  def take_book
-    order = Order.new(book: books.sample, reader: readers.sample)
-    orders.push(order)
-    update_library
+  def update_library
+    DbUtils.add(LIBRARY, library)
   end
 end

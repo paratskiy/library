@@ -1,25 +1,10 @@
 require_relative 'app/dependencies/dependencies.rb'
 
-library = Library.new
+ENV['LIBRARY_EMPTY?'] = File.empty?('library.yml').to_s
+ENV['LIBRARY_EXIST?'] = File.exist?('library.yml').to_s
 
-# 30.times { library.add(Author, :authors, name: FFaker::Book.author) }
+Filling.filling_library if ENV['LIBRARY_EMPTY?'] == 'true' || ENV['LIBRARY_EXIST?'] == 'false'
 
-# 30.times do
-#   library.add(Reader, :readers, name: FFaker::Name.name,
-#                         email: FFaker::Internet.email,
-#                         city: FFaker::Address.city,
-#                         street: FFaker::Address.street_name,
-#                         house: FFaker::Address.building_number.to_i)
-# end
-
-# 30.times { library.add(Book, :books, title: FFaker::Book.title, author: library.authors.sample) }
-
-# 30.times { library.take_book }
-
-# library.take_book
-library.add(Author, :authors, name: FFaker::Book.author)
-output = Output.new
-
-output.show_top_readers
-output.show_top_books(2)
-output.show_reader_of_top_books
+Output.show_top_readers
+Output.show_top_books(2)
+Output.show_number_of_reader_of_top_books

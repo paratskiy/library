@@ -1,5 +1,3 @@
-require_relative 'dependencies/dependencies.rb'
-
 class Book
   attr_reader :title, :author
 
@@ -13,8 +11,3 @@ class Book
     @author = author
   end
 end
-
-author = Author.new(name: 'sdfgsdfg')
-
-book = Book.new(title: 'lalal', author: author)
-
