@@ -1,16 +1,15 @@
 class Output
-  def show_top_readers(count = 1)
-    top_readers = Statistic.select_top_readers(count)
+  def self.show_top_readers(count = 1)
+    top_readers = Statistic.new.select_top(:reader, count)
     top_readers.each { |reader| puts "Top reader is #{reader.first.name}" }
   end
 
-  def show_top_books(count = 1)
-    top_books = Statistic.select_top_books(count)
+  def self.show_top_books(count = 1)
+    top_books = Statistic.new.select_top(:book, count)
     top_books.each { |book| puts "Top book is #{book.first.title}" }
   end
 
-  def show_reader_of_top_books(quantity = 3)
-    reader_of_top_books = Statistic.select_reader_of_top_books(quantity)
-    reader_of_top_books.each { |reader| puts "Reader of top books is #{reader.name}" }
+  def self.show_number_of_reader_of_top_books(quantity = 3)
+    puts "Number of reader of top books is #{Statistic.new.select_reader_of_top_books(quantity)}"
   end
 end

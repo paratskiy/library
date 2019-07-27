@@ -1,11 +1,11 @@
 class Order
-  attr_accessor :book, :reader, :date
+  attr_reader :book, :reader, :date
 
   include Validating
 
   def initialize(book: '', reader: '', date: DateTime.now)
-    valid_book?(book)
-    valid_reader?(reader)
+    valid_instance?(Book, book)
+    valid_instance?(Reader, reader)
 
     @book = book
     @reader = reader

@@ -1,7 +1,9 @@
 module Validating
-  def valid_string?(string = '')
-    raise Exceptions::InvalidInput, 'Should not be empty' if string.to_s.empty?
-    raise Exceptions::InvalidInput, 'Should be a string' unless string.is_a? String
+  def valid_string?(*arguments)
+    arguments.each do |argument|
+      raise Exceptions::InvalidInput, 'Should not be empty' if argument.to_s.empty?
+      raise Exceptions::InvalidInput, 'Should be a string' unless argument.is_a? String
+    end
   end
 
   def valid_number?(number = '')
@@ -10,18 +12,13 @@ module Validating
     raise Exceptions::InvalidInput, 'Should be positive' unless number.positive?
   end
 
-  def valid_author?(subject = '')
+  def valid_instance?(klass = '', subject = '')
     raise Exceptions::InvalidInput, 'Should not be empty' if subject.to_s.empty?
-    raise Exceptions::InvalidInstance, 'Should be an instance of Author class' unless subject.is_a? Author
+    raise Exceptions::InvalidInstance, "Should be an instance of #{klass} class" unless subject.is_a? klass
   end
 
-  def valid_book?(subject = '')
-    raise Exceptions::InvalidInput, 'Should not be empty' if subject.to_s.empty?
-    raise Exceptions::InvalidInstance, 'Should be an instance of Book class' unless subject.is_a? Book
-  end
-
-  def valid_reader?(subject = '')
-    raise Exceptions::InvalidInput, 'Should not be empty' if subject.to_s.empty?
-    raise Exceptions::InvalidInstance, 'Should be an instance of Reader class' unless subject.is_a? Reader
+  def found_entity?(db, entity = '')
+    raise Exceptions::InvalidInput, 'Should not be empty' if entity.to_s.empty?
+    raise Exceptions::UndefinedEntity, "Undefined key #{entity}" unless db.key?(entity)
   end
 end

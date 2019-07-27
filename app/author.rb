@@ -1,5 +1,5 @@
 class Author
-  attr_accessor :name, :biography
+  attr_reader :name, :biography
 
   include Validating
 
